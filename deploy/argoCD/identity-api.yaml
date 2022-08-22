@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  syncPolicy:
+    automated: {}
   source:
     repoURL: 'https://github.com/mvktsk/eShopOnContainers'
     path: ./deploy/k8s/helm/identity-api
@@ -28,6 +30,9 @@ spec:
           enabled: false
         ingress:
           hosts: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
+        image:
+          tag: 'linux-dev'
+          pullPolicy: Always
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: eshop
