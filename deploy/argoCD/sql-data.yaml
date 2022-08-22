@@ -13,8 +13,8 @@ spec:
     targetRevision: dev
     helm:
       valueFiles:
-        - ../inf.yaml
         - ../app.yaml
+        - ../inf.yaml
         - ../ingress_values.yaml
       values: |-
         app:
@@ -23,7 +23,7 @@ spec:
           k8s:
             dns: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
         ingress:
-          hosts: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
+          hosts: {eshop.874624fb8c3c4410b1bd.centralus.aksapp.io}
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: eshop

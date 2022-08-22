@@ -125,7 +125,8 @@ $gateways = ("apigwms", "apigwws")
 if ($deployInfrastructure) {
     foreach ($infra in $infras) {
         Write-Host "Installing infrastructure: $infra" -ForegroundColor Green
-        helm install "$appName-$infra" --values app.yaml --values inf.yaml --values $ingressValuesFile --set app.name=$appName --set inf.k8s.dns=$dns --set "ingress.hosts={$dns}" $infra     
+        Write-Host "helm install {$appName}-{$infra} --values app.yaml --values inf.yaml --values {$ingressValuesFile} --set app.name={$appName} --set inf.k8s.dns={$dns} --set ingress.hosts={$dns} $infra"
+#        helm install "$appName-$infra" --values app.yaml --values inf.yaml --values $ingressValuesFile --set app.name=$appName --set inf.k8s.dns=$dns --set "ingress.hosts={$dns}" $infra     
     }
 }
 else {

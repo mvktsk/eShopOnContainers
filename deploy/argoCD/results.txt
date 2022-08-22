@@ -1,0 +1,44 @@
+helm install {eshop}-{sql-data} --values app.yaml --values inf.yaml --values {ingress_values.yaml} --set app.name={eshop} --set inf.k8s.dns={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} sql-data
+Installing infrastructure: nosql-data
+helm install {eshop}-{nosql-data} --values app.yaml --values inf.yaml --values {ingress_values.yaml} --set app.name={eshop} --set inf.k8s.dns={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} nosql-data
+Installing infrastructure: rabbitmq
+helm install {eshop}-{rabbitmq} --values app.yaml --values inf.yaml --values {ingress_values.yaml} --set app.name={eshop} --set inf.k8s.dns={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} rabbitmq
+Installing infrastructure: keystore-data
+helm install {eshop}-{keystore-data} --values app.yaml --values inf.yaml --values {ingress_values.yaml} --set app.name={eshop} --set inf.k8s.dns={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} keystore-data
+Installing infrastructure: basket-data
+helm install {eshop}-{basket-data} --values app.yaml --values inf.yaml --values {ingress_values.yaml} --set app.name={eshop} --set inf.k8s.dns={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} basket-data
+Installing: eshop-common
+Installing: basket-api
+Helm Command: helm install eshop-basket-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False basket-api
+Installing: catalog-api
+Helm Command: helm install eshop-catalog-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False catalog-api
+Installing: identity-api
+Helm Command: helm install eshop-identity-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False identity-api
+Installing: mobileshoppingagg
+Helm Command: helm install eshop-mobileshoppingagg -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False mobileshoppingagg
+Installing: ordering-api
+Helm Command: helm install eshop-ordering-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False ordering-api
+Installing: ordering-backgroundtasks
+Helm Command: helm install eshop-ordering-backgroundtasks -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False ordering-backgroundtasks
+Installing: ordering-signalrhub
+Helm Command: helm install eshop-ordering-signalrhub -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev 
+--set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False ordering-signalrhub
+Installing: payment-api
+Helm Command: helm install eshop-payment-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False payment-api
+Installing: webmvc
+Helm Command: helm install eshop-webmvc -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webmvc
+Installing: webshoppingagg
+Helm Command: helm install eshop-webshoppingagg -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set 
+inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webshoppingagg
+Installing: webspa
+Helm Command: helm install eshop-webspa -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webspa
+Installing: webstatus
+Helm Command: helm install eshop-webstatus -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webstatus
+Installing: webhooks-api
+Helm Command: helm install eshop-webhooks-api -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webhooks-api
+Installing: webhooks-web
+Helm Command: helm install eshop-webhooks-web -f app.yaml --values inf.yaml -f ingress_values.yaml -f ingress_values_linkerd.yaml --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set image.tag=linux-dev --set image.pullPolicy=Always --set inf.tls.enabled=False --set inf.mesh.enabled=False --set inf.k8s.local=False webhooks-web
+
+
+Helm Command: helm install eshop-apigwms -f app.yaml -f inf.yaml -f ingress_values.yaml  --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io  --set image.pullPolicy=Always --set inf.mesh.enabled=False --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set inf.tls.enabled=False apigwms
+Helm Command: helm install eshop-apigwws -f app.yaml -f inf.yaml -f ingress_values.yaml  --set app.name=eshop --set inf.k8s.dns=eshop.874624fb8c3c4410b1bd.centralus.aksapp.io  --set image.pullPolicy=Always --set inf.mesh.enabled=False --set ingress.hosts={eshop.874624fb8c3c4410b1bd.centralus.aksapp.io} --set inf.tls.enabled=False apigwws

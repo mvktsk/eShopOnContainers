@@ -1,5 +1,5 @@
 $infras = ("sql-data", "nosql-data", "rabbitmq", "keystore-data", "basket-data")
-$charts = ("eshop-common", "basket-api","catalog-api", "identity-api", "mobileshoppingagg","ordering-api","ordering-backgroundtasks","ordering-signalrhub", "payment-api", "webmvc", "webshoppingagg", "webspa", "webstatus", "webhooks-api", "webhooks-web")
+$charts = ("basket-api","catalog-api", "identity-api", "mobileshoppingagg","ordering-api","ordering-backgroundtasks","ordering-signalrhub", "payment-api", "webmvc", "webshoppingagg", "webspa", "webstatus", "webhooks-api", "webhooks-web")
 $gateways = ("apigwms", "apigwws")
 
 foreach ($infra in $infras) {

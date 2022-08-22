@@ -29,9 +29,9 @@ spec:
         mesh: 
           enabled: false
         ingress:
-          hosts: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
+          hosts: {eshop.874624fb8c3c4410b1bd.centralus.aksapp.io}
         image:
-          tag: 'linux-dev'
+          tag: linux-dev
           pullPolicy: Always
   destination:
     server: 'https://kubernetes.default.svc'

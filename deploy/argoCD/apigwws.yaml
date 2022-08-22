@@ -16,22 +16,19 @@ spec:
         - ../app.yaml
         - ../inf.yaml
         - ../ingress_values.yaml
-        - ../ingress_values_linkerd.yaml
       values: |-
         app:
           name: eshop
         inf:
           k8s:
             dns: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
-            local: false
         tls:
-          enabled: false
+          enabled: False
         mesh: 
-          enabled: false
+          enabled: False
         ingress:
-          hosts: eshop.874624fb8c3c4410b1bd.centralus.aksapp.io
+          hosts: {eshop.874624fb8c3c4410b1bd.centralus.aksapp.io}
         image:
-          tag: 'linux-dev'
           pullPolicy: Always
   destination:
     server: 'https://kubernetes.default.svc'
